@@ -19,11 +19,11 @@
 <body>
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/home-loggedin" class="navbar-brand">Techhub</a>
+			<a href="/home-loggedin" class="navbar-brand">Home</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<!-- <li><a href="/login">Login</a></li>
-					<li><a href="/register">New Registration</a></li>
+					<li><a href="/home">Log Out</a></li>
+					<!-- <li><a href="/register">New Registration</a></li>
 					<li><a href="/show-users">All Users</a></li> -->
 				</ul>
 			</div>
@@ -54,7 +54,7 @@
 						onclick="window.location.href='/generatesalary';">
 						Generate Salary</button>
 				</div>
-
+				
 			</div>
 
 

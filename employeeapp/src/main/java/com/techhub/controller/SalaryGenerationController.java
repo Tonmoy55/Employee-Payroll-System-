@@ -1,7 +1,7 @@
 package com.techhub.controller;
 
-import javax.servlet.http.HttpServletRequest;
 
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.techhub.dto.SalaryGenerationDTO;
+
 import com.techhub.iservice.ISalaryGenerationService;
+
 
 @Controller
 public class SalaryGenerationController {
@@ -31,4 +33,12 @@ public class SalaryGenerationController {
 		request.setAttribute("mode", "MODE_SUCCESS");
 		return "salarygenerate";
 	}
+	
+	@RequestMapping("/print-salary-sheet")
+	public String ShowAllBankaccount(HttpServletRequest request) {
+		request.setAttribute("salarysheets", iSalaryGenerationService.showAllEmployeeSalarySheet());
+		request.setAttribute("mode", "SHOW_EMPLOYEE_SALARY_SHEET");
+		return "salarygenerate";
+	}
+	
 }

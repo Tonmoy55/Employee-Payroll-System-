@@ -16,12 +16,12 @@ public interface BankAccountRepository extends CrudRepository<BankAccount, Integ
 	@Modifying
 	@Query("UPDATE BankAccount SET balance = :companyNewBalance WHERE id=:id")
 	@Transactional
-	void updateCompanyBankAccountInfo(int id, BigInteger companyNewBalance);
+	void updateCompanyBankAccountInfo(int id, Double companyNewBalance);
 	
 	@Modifying
 	@Query("UPDATE BankAccount SET balance = :employeeNewBalance WHERE accountno=:accountno")
 	@Transactional
-	void updateEmployeeBankAccountInfo(String accountno, BigInteger employeeNewBalance);
+	void updateEmployeeBankAccountInfo(String accountno, Double employeeNewBalance);
 	
 	public BankAccount findByAccountno(String accountno);
 	

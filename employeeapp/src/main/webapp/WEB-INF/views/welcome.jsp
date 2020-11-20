@@ -21,7 +21,7 @@
 
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/home" class="navbar-brand">Techhub</a>
+			<a href="/home" class="navbar-brand">Home</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/login">Login</a></li>
@@ -41,6 +41,7 @@
 					<h3></h3>
 				</div>
 			</div>
+			
 		</c:when>
 
 		<c:when test="${mode=='MODE_REGISTER' }">

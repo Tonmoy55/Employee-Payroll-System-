@@ -19,9 +19,10 @@
 <body>
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/home-loggedin" class="navbar-brand">Techhub</a>
+			<a href="/home-loggedin" class="navbar-brand">Home</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
+				<li><a href="/home">Log Out</a></li>
 					<!-- <li><a href="/login">Login</a></li>
 					<li><a href="/register">New Registration</a></li>
 					<li><a href="/show-users">All Users</a></li> -->
@@ -33,6 +34,7 @@
 
 	<c:choose>
 		<c:when test="${mode=='MODE_GENERATE_SALARY' }">
+			
 			<div class="container" id="homediv">
 				<div class="jumbotron text-center">
 					<h2>Employee Salary Generation</h2>
@@ -44,12 +46,14 @@
 
 				<hr>
 
-				<form class="form-horizontal" method="POST" action="salarygeneration">
+				<form class="form-horizontal" method="POST"
+					action="salarygeneration">
 					<div class="form-group">
 						<label class="control-label col-md-3">Basic Salary of the
 							lowest Grade: </label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="basicSalaryOfLowestGrade"
+							<input type="text" class="form-control"
+								name="basicSalaryOfLowestGrade"
 								value="${salaryGenerationDTO.basicSalaryOfLowestGrade}" />
 						</div>
 					</div>
@@ -57,25 +61,33 @@
 						<label class="control-label col-md-3">Balance of the
 							company bank account:</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="companyAccountBalance"
+							<input type="text" class="form-control"
+								name="companyAccountBalance"
 								value="${salaryGenerationDTO.companyAccountBalance }" />
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Employee ID:</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="employeeId"
+							<input type="text" class="form-control"
+								name="employeeId"
 								value="${salaryGenerationDTO.employeeId }" />
 						</div>
 					</div>
+					
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary" value="Generate" />
+					</div>
+					<div>
+						<a class="btn btn-primary" href="/print-salary-sheet">Print
+							Employee Salary Sheet</a>
 					</div>
 				</form>
 			</div>
 
 		</c:when>
-		
+
 		<c:when test="${mode=='MODE_SUCCESS' }">
 			<div class="container" id="homediv">
 				<div class="jumbotron text-center alert alert-success">
@@ -84,7 +96,44 @@
 				</div>
 			</div>
 		</c:when>
-		
+
+
+
+		<c:when test="${mode=='SHOW_EMPLOYEE_SALARY_SHEET' }">
+			<div class="container text-right">
+				<a class="btn btn-primary" href="/generatesalary">Back to
+					Previous Page</a>
+			</div>
+			<div class="container text-center" id="tasksDiv">
+				<h3>Employee Salary Sheet</h3>
+				<hr>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th>Employee ID</th>
+								<th>Employee Name</th>
+								<th>Grade</th>
+								<th>Salary</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="salarysheet" items="${salarysheets}">
+								<tr>
+									<td>${salarysheet.id}</td>
+									<td>${salarysheet.employeename}</td>
+									<td>${salarysheet.gradename}</td>
+									<td>${salarysheet.balance}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</c:when>
+
+
 	</c:choose>
 
 

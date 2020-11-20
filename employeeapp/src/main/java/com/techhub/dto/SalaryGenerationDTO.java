@@ -3,8 +3,8 @@ package com.techhub.dto;
 import java.math.BigInteger;
 
 public class SalaryGenerationDTO {
-	private BigInteger basicSalaryOfLowestGrade;
-	private BigInteger companyAccountBalance;
+	private Double basicSalaryOfLowestGrade;
+	private Double companyAccountBalance;
 	private int employeeId;
 	
 	
@@ -12,7 +12,7 @@ public class SalaryGenerationDTO {
 	}
 
 
-	public SalaryGenerationDTO(BigInteger basicSalaryOfLowestGrade, BigInteger companyAccountBalance, int employeeId) {
+	public SalaryGenerationDTO(Double basicSalaryOfLowestGrade, Double companyAccountBalance, int employeeId) {
 		super();
 		this.basicSalaryOfLowestGrade = basicSalaryOfLowestGrade;
 		this.companyAccountBalance = companyAccountBalance;
@@ -20,22 +20,22 @@ public class SalaryGenerationDTO {
 	}
 
 
-	public BigInteger getBasicSalaryOfLowestGrade() {
+	public Double getBasicSalaryOfLowestGrade() {
 		return basicSalaryOfLowestGrade;
 	}
 
 
-	public void setBasicSalaryOfLowestGrade(BigInteger basicSalaryOfLowestGrade) {
+	public void setBasicSalaryOfLowestGrade(Double basicSalaryOfLowestGrade) {
 		this.basicSalaryOfLowestGrade = basicSalaryOfLowestGrade;
 	}
 
 
-	public BigInteger getCompanyAccountBalance() {
+	public Double getCompanyAccountBalance() {
 		return companyAccountBalance;
 	}
 
 
-	public void setCompanyAccountBalance(BigInteger companyAccountBalance) {
+	public void setCompanyAccountBalance(Double companyAccountBalance) {
 		this.companyAccountBalance = companyAccountBalance;
 	}
 
@@ -93,4 +93,5 @@ public class SalaryGenerationDTO {
 	}
 
 
+	
 }

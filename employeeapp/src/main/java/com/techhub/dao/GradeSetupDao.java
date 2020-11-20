@@ -13,18 +13,17 @@ import com.techhub.repository.GradeRepository;
 @Transactional
 public class GradeSetupDao implements IGradeSetupDao {
 
-private final GradeRepository gradeRepository;
-	
+	private final GradeRepository gradeRepository;
+
 	public GradeSetupDao(GradeRepository gradeRepository) {
-		
-		 this.gradeRepository=gradeRepository; 
+
+		this.gradeRepository = gradeRepository;
 	}
-	
-	
+
 	@Override
 	public void saveGrade(Grade grade) {
 		gradeRepository.save(grade);
-		
+
 	}
 
 	@Override
@@ -40,7 +39,7 @@ private final GradeRepository gradeRepository;
 	@Override
 	public void deleteById(int gradeid) {
 		gradeRepository.deleteById(gradeid);
-		
+
 	}
 
 	@Override

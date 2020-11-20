@@ -1,6 +1,5 @@
 package com.techhub.model;
 
-import java.math.BigInteger;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,7 @@ public class BankAccount {
 	private String accounttype;
 	private String accountname;
 	private String accountno;
-	private BigInteger balance;
+	private Double balance;
 	private String bankname;
 	private String branchname;
 	
@@ -28,7 +27,7 @@ public class BankAccount {
 	}
 
 
-	public BankAccount(String accounttype, String accountname, String accountno, BigInteger balance, String bankname,
+	public BankAccount(String accounttype, String accountname, String accountno, Double balance, String bankname,
 			String branchname) {
 		super();
 		this.accounttype = accounttype;
@@ -80,12 +79,12 @@ public class BankAccount {
 	}
 
 
-	public BigInteger getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 
 
-	public void setBalance(BigInteger balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 

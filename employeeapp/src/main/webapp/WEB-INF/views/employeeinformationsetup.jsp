@@ -19,9 +19,10 @@
 <body>
 	<div role="navigation">
 		<div class="navbar navbar-inverse">
-			<a href="/home-loggedin" class="navbar-brand">Techhub</a>
+			<a href="/home-loggedin" class="navbar-brand">Home</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
+				<li><a href="/home">Log Out</a></li>
 					<!-- <li><a href="/login">Login</a></li>
 					<li><a href="/register">New Registration</a></li>
 					<li><a href="/show-users">All Users</a></li> -->
@@ -45,13 +46,20 @@
 								value="${employee.employeename }" />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label class="control-label col-md-3">Grade/Rank</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="grade.id"
-								value="${employee.grade.id }" />
+							<select id="grade" name="grade" class="form-control">
+								<option>--Please Select--</option>
+								<c:forEach var="grade" items="${gradeList }">
+									<option value="${grade.id}">${grade.gradename}</option>
+								</c:forEach>
+							</select>
 						</div>
 					</div>
+
+
 					<div class="form-group">
 						<label class="control-label col-md-3">Address</label>
 						<div class="col-md-7">
@@ -66,13 +74,19 @@
 								value="${employee.mobileno }" />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label class="control-label col-md-3">Bank Account</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="bankAccount.id"
-								value="${employee.bankAccount.id }" />
+							<select id="account" name="account" class="form-control">
+								<option>--Please Select--</option>
+								<c:forEach var="account" items="${accountList }">
+									<option value="${account.id}">${account.accountno}</option>
+								</c:forEach>
+							</select>
 						</div>
 					</div>
+
 					<div class="form-group ">
 						<input type="submit" class="btn btn-primary" value="Save" />
 					</div>
@@ -94,7 +108,7 @@
 				</div>
 			</div>
 		</c:when>
-		
+
 		<c:when test="${mode=='SHOW_ALL_EMPLOYEE' }">
 			<div class="container text-center" id="tasksDiv">
 				<h3>Employee Information</h3>
@@ -133,7 +147,7 @@
 				</div>
 			</div>
 		</c:when>
-		
+
 		<c:when test="${mode=='MODE_UPDATE_EMPLOYEE' }">
 			<div class="container text-center">
 				<h3>Employee Setup</h3>
@@ -190,7 +204,7 @@
 				</div>
 			</div>
 		</c:when>
-		
+
 	</c:choose>
 
 
